@@ -84,6 +84,7 @@ class HomePage extends React.Component {
                     <img src="https://picsum.photos/1000/400" />
                     <img src="https://picsum.photos/1000/400" />
                 </Carousel>
+                <div>123</div>
                 <Grid container spacing={2} className="mt-3">
 
                     <Grid item sm={6} xs={12}>
@@ -144,6 +145,60 @@ class HomePage extends React.Component {
                             </CardActionArea>
                         </Paper>
                     </Grid>
+                </Grid>
+                <p>Компоненты:</p>
+                <h5>Button</h5>
+                <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+                    <Button variant='contained' color="primary" onPress={() => console.log('home')}>Click Me</Button>
+                    <Button variant='outlined' color="primary" onPress={() => console.log('home')}>Click Me</Button>
+                    <Button onPress={() => console.log('home')} color="primary">asdasd</Button>
+                </div>
+                <h5>Switch</h5>
+                <Switch isToggled={this.state.switch} onToggle={() => this.handleToggleChange()} />
+                <h5>ListItem</h5>
+                <ListItem>
+                    <ListItemFirstAction>
+                        <ListItemIcon>icon</ListItemIcon>
+                        <ListItemText title='Title' subtitle='subtitle' />
+                    </ListItemFirstAction>
+                    <ListItemSecondAction>
+                        <Switch isToggled={this.state.switchInList} onToggle={() => this.handleToggleChangeTwo()} />
+                    </ListItemSecondAction>
+                </ListItem>
+                <h5>Card</h5>
+                <Card>
+                    <CardActionArea>
+                        <CardMedia
+                            component="img"
+                            height="140"
+                            image={`${config.url}/assets/img/350x250.png`}
+                            title="Contemplative Reptile"
+                        />
+                        <CardContent>
+                            <Typography variant="h5" component="h2">
+                                1231231231
+                                </Typography>
+                                123123123123123123123123123123123123123123123
+                            </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                        <IconButton
+                            aria-label="add to favorites"
+                        >
+                            <FavoriteBorder />
+                        </IconButton>
+                        <IconButton aria-label="share">
+                            <ShareIcon />
+                        </IconButton>
+                    </CardActions>
+                </Card>
+                <h5>Grid</h5>
+                <Grid container spacing={2}>
+                    {this.state.items.map((item, index) => (
+                        <Grid key={index} item sm={3} xs={4}>
+                            <div className='box'>{item}</div>
+                        </Grid>
+                    ))}
                 </Grid>
                 {/* <h3>Что сделанно:</h3>
                 <ul>
